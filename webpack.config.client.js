@@ -8,6 +8,7 @@ module.exports = {
     client: path.resolve(__dirname, "src/client/client.tsx"),
   },
   mode: "production",
+  plugins: [new CleanWebpackPlugin(), new WebpackManifestPlugin()],
   output: {
     path: path.resolve(__dirname + "/dist/static"),
     filename: "[name].[contenthash].js",
@@ -26,7 +27,10 @@ module.exports = {
           configFile: "tsconfig.client.json",
         },
       },
+      {
+        test: /\.s[ac]ss$/i,
+        use: ["style-loader", "css-loader", "sass-loader"],
+      },
     ],
   },
-  plugins: [new CleanWebpackPlugin(), new WebpackManifestPlugin()],
 };

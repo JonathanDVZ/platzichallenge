@@ -3,7 +3,7 @@ import fs from "fs";
 import path from "path";
 import React from "react";
 import ReactDOMServer from "react-dom/server";
-import App from "../client/components/app";
+import App from "../client/App";
 
 const server = express();
 
