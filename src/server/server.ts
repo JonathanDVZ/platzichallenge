@@ -1,6 +1,7 @@
 import express from "express";
 import fs from "fs";
 import path from "path";
+import axios from "axios";
 import React from "react";
 import ReactDOMServer from "react-dom/server";
 import App from "../client/App";
@@ -21,6 +22,17 @@ const assets = JSON.parse(manifest);
 server.get("/", (req, res) => {
   const component = ReactDOMServer.renderToString(React.createElement(App));
   res.render("client", { assets, component });
+});
+
+server.get("/api/characters", async (req, res, next) => {
+  try {
+    const response = await axios.get(
+      "https://apisimpsons.fly.dev/api/personajes?limit=650"
+    );
+    res.json(response.data);
+  } catch (err) {
+    next(err);
+  }
 });
 
 server.listen(3000, () =>
