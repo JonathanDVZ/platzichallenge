@@ -5,7 +5,7 @@
   width: 45%;
   border: 1px solid $color-grey;
   border-radius: 8px;
-  margin: 10px 0;
+  margin: 10px;
   overflow: hidden;
   position: relative;
   @include respond-to("sm") {

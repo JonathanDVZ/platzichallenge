@@ -1,5 +1,5 @@
 import React from "react";
-import { Routes, Route, Outlet, Link } from "react-router-dom";
+import { Routes, Route, Link } from "react-router-dom";
 import CharacterProvider from "./context/CharacterProvider";
 import routes from "./routes/routes";
 import type { Route as RouteType } from "../client/routes/routes";
