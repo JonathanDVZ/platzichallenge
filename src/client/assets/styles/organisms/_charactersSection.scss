@@ -1,0 +1,14 @@
+.ptz-characters-section {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  margin: 50px;
+  &__result {
+    display: flex;
+    flex-flow: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 70px;
+  }
+}

@@ -1,6 +1,9 @@
 import { createContext } from "react";
-import { ICharacterContext } from "../types/CharacterContext";
+import { ICharacterContext, ICharacterState } from "../types/CharacterContext";
 
-const CharacterContext = createContext<ICharacterContext | null>(null);
+const CharacterContext = createContext<ICharacterContext>({
+  state: {} as ICharacterState,
+  dispatch: () => {},
+});
 
 export default CharacterContext;

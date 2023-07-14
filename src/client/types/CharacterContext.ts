@@ -1,3 +1,5 @@
+import { Dispatch } from "react";
+
 export interface ICharacter {
   id: string;
   name: string;
@@ -8,16 +10,15 @@ export interface ICharacter {
   occupation: string;
 }
 
-export type ICharacterContext = {
-  state: ICharacterState;
-  setCharacters: () => void;
-  addFavorite: (character: ICharacter) => void;
-};
-
 export interface ICharacterState {
   characters: ICharacter[];
   favorites: ICharacter[];
 }
+
+export type ICharacterContext = {
+  state: ICharacterState;
+  dispatch: Dispatch<IAction>;
+};
 
 export enum ActionType {
   ADD_CHACARTERS = "ADD_CHACARTERS",
