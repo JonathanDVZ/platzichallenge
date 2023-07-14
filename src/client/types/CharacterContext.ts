@@ -8,22 +8,21 @@ export interface ICharacter {
   gender: string;
   status: string;
   occupation: string;
+  favorite: boolean;
 }
 
 export interface ICharacterState {
   characters: ICharacter[];
-  favorites: ICharacter[];
 }
 
-export type ICharacterContext = {
+export interface ICharacterContext {
   state: ICharacterState;
   dispatch: Dispatch<IAction>;
-};
+}
 
 export enum ActionType {
   ADD_CHACARTERS = "ADD_CHACARTERS",
-  ADD_FAVORITE = "ADD_FAVORITE",
-  REMOVE_FAVORITE = "REMOVE_FAVORITE",
+  TOGGLE_FAVORITE = "TOGGLE_FAVORITE",
 }
 
 export type IAction = {

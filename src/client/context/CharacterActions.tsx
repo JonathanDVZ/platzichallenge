@@ -28,13 +28,14 @@ const setCharacters = async (dispatch: Dispatch<IAction>) => {
       gender: Genero,
       status: Estado,
       occupation: Ocupacion,
+      favorite: false,
     })
   );
   dispatch({ type: ActionType.ADD_CHACARTERS, payload: characters });
 };
 
-const addFavorite = (dispatch: Dispatch<IAction>, character: ICharacter) => {
-  dispatch({ type: ActionType.ADD_FAVORITE, payload: character });
+const toggleFavorite = (dispatch: Dispatch<IAction>, character: ICharacter) => {
+  dispatch({ type: ActionType.TOGGLE_FAVORITE, payload: character });
 };
 
-export { setCharacters, addFavorite };
+export { setCharacters, toggleFavorite };

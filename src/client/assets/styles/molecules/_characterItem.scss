@@ -7,6 +7,7 @@
   border-radius: 8px;
   margin: 10px 0;
   overflow: hidden;
+  position: relative;
   @include respond-to("sm") {
     width: 27%;
   }
@@ -29,6 +30,7 @@
     justify-content: center;
     align-items: center;
     background: rgba($color-blue, 0.3);
+    position: relative;
     .ptz-img {
       width: 80%;
       height: 80%;

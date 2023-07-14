@@ -19,7 +19,7 @@ interface IDataResult {
 }
 
 const CharacterProvider = ({ children }: { children: React.ReactNode }) => {
-  const initialState: ICharacterState = { characters: [], favorites: [] };
+  const initialState: ICharacterState = { characters: [] };
 
   const [state, dispatch] = useReducer(CharacterReducer, initialState);
 

@@ -7,13 +7,13 @@ import CharacterItem from "../molecules/CharacterItem";
 const CharactersSection: React.FC = () => {
   const { state } = useContext(CharacterContext);
   const { characters } = state as ICharacterState;
-  console.log(characters);
+
   return (
     <section className="ptz-characters-section">
       <SearchBox />
       <div className="ptz-characters-section__result">
         {characters.map((character) => (
-          <CharacterItem character={character} />
+          <CharacterItem key={character.id} character={character} />
         ))}
       </div>
     </section>

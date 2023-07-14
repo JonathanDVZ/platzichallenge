@@ -1,0 +1,45 @@
+.ptz-favorite-button {
+  width: 40px;
+  height: 40px;
+  background-color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  &__icon {
+    background-color: $color-light-grey;
+    display: inline-block;
+    height: 15px;
+    margin-top: 7px;
+    position: relative;
+    top: 0;
+    transform: rotate(-45deg);
+    width: 15px;
+    &:before,
+    &:after {
+      content: "";
+      background-color: $color-light-grey;
+      border-radius: 50%;
+      height: 15px;
+      position: absolute;
+      width: 15px;
+    }
+    &:before {
+      top: -10px;
+      left: 0;
+    }
+    &:after {
+      left: 10px;
+      top: 0;
+    }
+    &--red {
+      background-color: red;
+      &:before,
+      &:after {
+        background-color: red;
+      }
+    }
+  }
+}
