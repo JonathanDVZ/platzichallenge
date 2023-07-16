@@ -17,6 +17,7 @@ const sortOptions = [
   { value: SortType.NAME, text: "Name" },
   { value: SortType.GENDER, text: "Gender" },
   { value: SortType.STATUS, text: "Status" },
+  { value: SortType.OCCUPATION, text: "Occupation" },
 ];
 
 const filterOptions = [
@@ -114,6 +115,16 @@ const CharactersSection: React.FC<Props> = ({ characters }) => {
           return -1;
         }
         if (c1.status > c2.status) {
+          return 1;
+        }
+        return 0;
+      });
+    else if (selectedSort === SortType.OCCUPATION)
+      return [...filteredCharacters].sort((c1, c2) => {
+        if (c1.occupation < c2.occupation) {
+          return -1;
+        }
+        if (c1.occupation > c2.occupation) {
           return 1;
         }
         return 0;

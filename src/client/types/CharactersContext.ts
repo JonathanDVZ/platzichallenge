@@ -35,6 +35,7 @@ export enum SortType {
   NAME = "NAME",
   GENDER = "GENDER",
   STATUS = "STATUS",
+  OCCUPATION = "OCCUPATION",
 }
 
 export enum FilterType {
