@@ -5,6 +5,7 @@
   position: relative;
   display: flex;
   justify-content: space-between;
+  z-index: 30;
   &__header {
     display: flex;
     align-items: center;
@@ -19,11 +20,59 @@
   }
   &__btn {
     display: none;
+    @include breakpoint-max("md") {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+      width: 70px;
+      border: none;
+      background: transparent;
+      &:hover,
+      &--clicked {
+        background-color: rgba($color-dark-blue, 0.7);
+      }
+      > label {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        width: 35px;
+        height: 25px;
+        > span {
+          display: block;
+          width: 100%;
+          height: 2px;
+          background-color: #ffffff;
+        }
+      }
+    }
+  }
+  &__actions-container {
+    display: flex;
+    align-items: center;
   }
   &__links-container {
     display: inline;
     float: right;
     font-size: 18px;
+    overflow-x: hidden;
+    @include breakpoint-max("md") {
+      position: absolute;
+      display: block;
+      width: 100%;
+      background-color: $color-dark-blue;
+      height: 0px;
+      max-height: 0px;
+      transition: max-height 0.3s ease-in;
+      overflow: hidden;
+      top: 70px;
+      left: 0px;
+      &--open {
+        height: auto;
+        max-height: 700px;
+        overflow-y: auto;
+      }
+    }
   }
   &__link {
     display: inline-block;
@@ -34,102 +83,24 @@
     &:hover {
       background-color: $color-dark-blue;
     }
+    @include breakpoint-max("md") {
+      display: block;
+      width: 100%;
+    }
   }
-  &__nav-check {
-    display: none;
+  &__darkmode-btn {
+    background-color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 20px;
+    width: min-content;
+    height: min-content;
+    padding: 0;
+    overflow: hidden;
+    margin-right: 15px;
   }
 }
 
-/*
-@media (max-width:600px) {
-  .nav > .nav-btn {
-    display: inline-block;
-    position: absolute;
-    right: 0px;
-    top: 0px;
-  }
-  .nav > .nav-btn > label {
-    display: inline-block;
-    width: 50px;
-    height: 50px;
-    padding: 13px;
-  }
-  .nav > .nav-btn > label:hover,.nav  #nav-check:checked ~ .nav-btn > label {
-    background-color: rgba(0, 0, 0, 0.3);
-  }
-  .nav > .nav-btn > label > span {
-    display: block;
-    width: 25px;
-    height: 10px;
-    border-top: 2px solid #eee;
-  }
-  .nav > .nav-links {
-    position: absolute;
-    display: block;
-    width: 100%;
-    background-color: #333;
-    height: 0px;
-    transition: all 0.3s ease-in;
-    overflow-y: hidden;
-    top: 50px;
-    left: 0px;
-  }
-  .nav > .nav-links > a {
-    display: block;
-    width: 100%;
-  }
-  .nav > #nav-check:not(:checked) ~ .nav-links {
-    height: 0px;
-  }
-  .nav > #nav-check:checked ~ .nav-links {
-    height: calc(100vh - 50px);
-    overflow-y: auto;
-  }
+body.ptz-dark-mode .ptz-navbar {
+  background-color: $color-dark-mode-blue;
 }
-*/
-/*
-.ptz-navbar {
-  background-color: $color-blue;
-  width: 100%;
-  height: 70px;
-  overflow: hidden;
-  h1 {
-    margin: 0;
-    color: $color-yellow;
-    font-weight: lighter;
-  }
-  &__logo {
-    float: left;
-    display: block;
-  }
-  &__link {
-    float: left;
-    display: block;
-    color: #f2f2f2;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    font-size: 17px;
-    &:not(:first-child) {
-      @media screen and (max-width: 600px) {
-        display: none;
-      }
-    }
-    &:hover {
-      background-color: #ddd;
-      color: black;
-    }
-    &.active {
-      background-color: #04aa6d;
-      color: white;
-    }
-    &.icon {
-      display: none;
-      @media screen and (max-width: 600px) {
-        float: right;
-        display: block;
-      }
-    }
-  }
-}
-*/

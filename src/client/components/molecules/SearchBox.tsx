@@ -1,13 +1,18 @@
 import React, { useState } from "react";
 import Input from "../atom/Input";
-import SearchButton from "../atom/SearchButton";
+import ButtonWithIcon from "../atom/ButtonWithIcon";
+import { Search } from "iconoir-react";
 
-const SearchBox: React.FC = () => {
+type Props = {
+  onSearch: (search: string) => void;
+};
+
+const SearchBox: React.FC<Props> = ({ onSearch }) => {
   const [search, setSearch] = useState("");
 
   const handleSubmit = (event: React.FormEvent) => {
     event.preventDefault();
-    alert(`The name you entered was: ${search}`);
+    onSearch(search.toLocaleLowerCase());
     setSearch("");
   };
 
@@ -18,10 +23,16 @@ const SearchBox: React.FC = () => {
           type="text"
           placeholder="Search character"
           name="search"
+          className="ptz-search-box__input"
           value={search}
           onChange={(e) => setSearch(e.target.value)}
         />
-        <SearchButton />
+        <ButtonWithIcon
+          className="ptz-search-box__btn"
+          type="submit"
+          aria-label="search"
+          iconComponent={<Search height={20} width={20} />}
+        />
       </form>
     </div>
   );

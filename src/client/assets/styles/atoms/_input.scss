@@ -7,3 +7,8 @@
   padding: 6px 12px;
   border-radius: 8px;
 }
+
+body.ptz-dark-mode .ptz-input {
+  background-color: $color-dark-mode-blue;
+  color: white;
+}

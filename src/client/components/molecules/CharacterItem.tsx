@@ -1,9 +1,9 @@
 import React, { useContext } from "react";
-import CharacterContext from "../../context/CharacterContext";
-import { toggleFavorite } from "../../context/CharacterActions";
+import CharacterContext from "../../context/characters/CharactersContext";
+import { toggleFavorite } from "../../context/characters/CharactersActions";
 import Image from "../atom/Image";
 import FavoriteButton from "../atom/FavoriteButton";
-import { ICharacter } from "../../types/CharacterContext";
+import { ICharacter } from "../../types/CharactersContext";
 
 type Props = {
   character: ICharacter;

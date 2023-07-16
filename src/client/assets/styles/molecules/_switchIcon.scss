@@ -1,0 +1,17 @@
+.ptz-switch-icon {
+  display: flex;
+  height: 35px;
+  width: 70px;
+  &__option {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &--light {
+      background-color: rgba($color-yellow, 0.7);
+    }
+    &--dark {
+      background-color: rgba($color-dark-blue, 0.7);
+    }
+  }
+}

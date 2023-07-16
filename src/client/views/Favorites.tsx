@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useContext } from "react";
-import CharacterContext from "../context/CharacterContext";
+import CharacterContext from "../context/characters/CharactersContext";
 import CharactersSection from "../components/organisms/CharactersSection";
-import { ICharacter } from "../types/CharacterContext";
+import { ICharacter } from "../types/CharactersContext";
 
 const Favorites: React.FC = () => {
   const {
@@ -10,10 +10,10 @@ const Favorites: React.FC = () => {
   const [favorites, setFavorites] = useState<ICharacter[]>([]);
 
   useEffect(() => {
-    const favoriteResults = characters.flatMap((character) =>
+    const favoritesResult = characters.flatMap((character) =>
       character.favorite ? [character] : []
     ) as ICharacter[];
-    setFavorites(favoriteResults);
+    setFavorites(favoritesResult);
   }, [characters]);
 
   return (

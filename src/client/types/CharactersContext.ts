@@ -29,3 +29,21 @@ export type IAction = {
   type: ActionType;
   payload: ICharacter[] | ICharacter;
 };
+
+export enum SortType {
+  DEFAULT = "DEFAULT",
+  NAME = "NAME",
+  GENDER = "GENDER",
+  STATUS = "STATUS",
+}
+
+export enum FilterType {
+  DEFAULT = "DEFAULT",
+  MAN = "MAN",
+  WOMAN = "WOMAN",
+  PET = "PET",
+  DIED = "DIED",
+  ALIVE = "ALIVE",
+  FICTIONAL = "FICTIONAL",
+  ROBOT = "ROBOT",
+}

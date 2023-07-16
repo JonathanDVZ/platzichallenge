@@ -1,0 +1,21 @@
+.ptz-dropdown {
+  display: flex;
+  align-items: center;
+  margin: 0 5px;
+  &__select {
+    background: white;
+    border: 1px solid #acadae;
+    display: block;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    padding: 6px 12px;
+    border-radius: 8px;
+    margin-left: 7px;
+  }
+}
+
+body.ptz-dark-mode .ptz-dropdown__select {
+  background-color: $color-dark-mode-blue;
+  color: white;
+}

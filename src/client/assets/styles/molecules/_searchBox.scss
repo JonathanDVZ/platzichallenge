@@ -3,12 +3,21 @@
   form {
     display: flex;
   }
-  .ptz-input {
+  &__input {
     border-radius: 8px 0px 0px 8px;
     height: 36px;
     width: 400px;
+    @include breakpoint-max("md") {
+      width: 250px;
+    }
+    @include breakpoint-max("sm") {
+      width: 200px;
+    }
   }
-  .ptz-search-button {
+  &__btn {
+    background-color: $color-yellow;
+    border: none;
+    cursor: pointer;
     border-radius: 0px 8px 8px 0px;
     height: 50px;
     width: 50px;

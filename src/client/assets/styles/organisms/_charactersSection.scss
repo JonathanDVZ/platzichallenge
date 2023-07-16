@@ -2,13 +2,16 @@
   display: flex;
   flex-flow: column;
   align-items: center;
-  margin: 50px;
+  margin: 40px 15px;
+  @include breakpoint-min("md") {
+    margin: 50px;
+  }
   &__result {
     display: flex;
     flex-flow: row;
     flex-wrap: wrap;
     justify-content: center;
     width: 100%;
-    margin-top: 70px;
+    margin-top: 15px;
   }
 }

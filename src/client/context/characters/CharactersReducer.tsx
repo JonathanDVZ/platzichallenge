@@ -3,7 +3,7 @@ import {
   IAction,
   ICharacter,
   ActionType,
-} from "../types/CharacterContext";
+} from "../../types/CharactersContext";
 
 export default (state: ICharacterState, action: IAction): ICharacterState => {
   switch (action.type) {

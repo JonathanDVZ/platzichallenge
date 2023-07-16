@@ -1,6 +1,6 @@
 import { Dispatch } from "react";
 import axios from "axios";
-import { IAction, ICharacter, ActionType } from "../types/CharacterContext";
+import { IAction, ICharacter, ActionType } from "../../types/CharactersContext";
 
 type CharacterDoc = {
   _id: string;
