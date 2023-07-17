@@ -41,4 +41,4 @@ server.get('*', (req, res) => {
   res.render('client', { assets, component });
 });
 
-server.listen(3000, () => console.log(`Server running on http://localhost:3000`));
+server.listen(8000, () => console.log(`Server running on http://localhost:8000`));

@@ -2,7 +2,7 @@ describe('test home screen', () => {
   let totalResult: JQuery<HTMLElement>;
 
   beforeEach(() => {
-    cy.visit('http://localhost:3000');
+    cy.visit('http://localhost:8000');
   });
 
   it('characters items by default', () => {
