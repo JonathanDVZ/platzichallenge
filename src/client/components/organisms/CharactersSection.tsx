@@ -34,15 +34,21 @@ const CharactersSection: React.FC<Props> = ({ characters }) => {
   // This state is to keep the filtered results
   const [filteredCharacters, setFilteredCharacters] = useState<ICharacter[]>([]);
   const [selectedFilter, setSelectedFilter] = useState<FilterType>(FilterType.DEFAULT);
-  const [filterByUser, setFilterByUser] = useState<boolean>(false);
   const [selectedSort, setSelectedSort] = useState<SortType>(SortType.DEFAULT);
 
   useEffect(() => {
-    handleSearch(characters, setSearchedCharacters, search);
-    setFilterByUser(false);
-    setSelectedFilter(FilterType.DEFAULT);
-    setSelectedSort(SortType.DEFAULT);
-  }, [characters, search]);
+    if (characters) {
+      handleSearch(characters, setSearchedCharacters, search);
+    }
+  }, [characters]);
+
+  useEffect(() => {
+    if (characters) {
+      handleSearch(characters, setSearchedCharacters, search);
+      setSelectedFilter(FilterType.DEFAULT);
+      setSelectedSort(SortType.DEFAULT);
+    }
+  }, [search]);
 
   useEffect(() => {
     /* 
@@ -54,7 +60,7 @@ const CharactersSection: React.FC<Props> = ({ characters }) => {
 
   useEffect(() => {
     // When the user changes the filter option then filteredCharacters will be updated
-    if (searchedCharacters && filterByUser) {
+    if (searchedCharacters) {
       if (selectedFilter === FilterType.DEFAULT)
         handleSearch(searchedCharacters, setFilteredCharacters, search);
       else if (selectedFilter === FilterType.MAN)
@@ -72,7 +78,7 @@ const CharactersSection: React.FC<Props> = ({ characters }) => {
       if (selectedFilter === FilterType.ROBOT)
         handleSearch(searchedCharacters, setFilteredCharacters, 'robot');
     }
-  }, [selectedFilter]);
+  }, [searchedCharacters, selectedFilter]);
 
   /* 
     In this case, useMemo is used to calculate the final result to show. 
@@ -140,7 +146,6 @@ const CharactersSection: React.FC<Props> = ({ characters }) => {
   };
 
   const handleFilter = (value: string) => {
-    setFilterByUser(true);
     setSelectedFilter(value as FilterType);
   };
 
