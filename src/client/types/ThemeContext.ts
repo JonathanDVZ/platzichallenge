@@ -1,12 +1,12 @@
-import { Dispatch } from "react";
+import { Dispatch } from 'react';
 
 export interface IThemeState {
   theme: Theme;
 }
 
 export enum Theme {
-  DARK = "DARK",
-  LIGHT = "LIGHT",
+  DARK = 'DARK',
+  LIGHT = 'LIGHT'
 }
 
 export interface IThemeContext {
@@ -15,7 +15,7 @@ export interface IThemeContext {
 }
 
 export enum ActionType {
-  TOGGLE_THEME = "TOGGLE_THEME",
+  TOGGLE_THEME = 'TOGGLE_THEME'
 }
 
 export type IAction = {

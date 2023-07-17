@@ -1,5 +1,5 @@
-import Home from "../views/Home";
-import Favorites from "../views/Favorites";
+import Home from '../views/Home';
+import Favorites from '../views/Favorites';
 
 export type Route = {
   path: string;
@@ -9,14 +9,14 @@ export type Route = {
 
 const routes: Route[] = [
   {
-    path: "/",
+    path: '/',
     component: Home,
-    index: true,
+    index: true
   },
   {
-    path: "/favorites",
-    component: Favorites,
-  },
+    path: '/favorites',
+    component: Favorites
+  }
 ];
 
 export default routes;

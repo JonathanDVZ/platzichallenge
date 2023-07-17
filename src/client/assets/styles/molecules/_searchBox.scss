@@ -7,10 +7,10 @@
     border-radius: 8px 0px 0px 8px;
     height: 36px;
     width: 400px;
-    @include breakpoint-max("md") {
+    @include breakpoint-max('md') {
       width: 250px;
     }
-    @include breakpoint-max("sm") {
+    @include breakpoint-max('sm') {
       width: 200px;
     }
   }

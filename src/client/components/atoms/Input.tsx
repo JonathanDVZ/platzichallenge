@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 export interface IInput extends React.InputHTMLAttributes<HTMLInputElement> {
   className?: string;
@@ -9,10 +9,7 @@ const Input: React.FC<IInput> = (props) => {
   delete inputProps.className;
 
   return (
-    <input
-      {...inputProps}
-      className={`ptz-input${props.className ? ` ${props.className}` : ""}`}
-    />
+    <input {...inputProps} className={`ptz-input${props.className ? ` ${props.className}` : ''}`} />
   );
 };
 

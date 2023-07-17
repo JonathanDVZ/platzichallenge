@@ -3,7 +3,7 @@
   flex-flow: column;
   align-items: center;
   margin: 40px 15px;
-  @include breakpoint-min("md") {
+  @include breakpoint-min('md') {
     margin: 50px;
   }
   &__result {

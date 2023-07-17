@@ -11,19 +11,19 @@
   @media (min-width: 495px) {
     width: 45%;
   }
-  @include breakpoint-min("sm") {
+  @include breakpoint-min('sm') {
     width: 27%;
   }
-  @include breakpoint-min("md") {
+  @include breakpoint-min('md') {
     width: 23%;
   }
-  @include breakpoint-min("lg") {
+  @include breakpoint-min('lg') {
     width: 17%;
   }
-  @include breakpoint-min("xl") {
+  @include breakpoint-min('xl') {
     width: 15%;
   }
-  @include breakpoint-min("xxl") {
+  @include breakpoint-min('xxl') {
     width: 13%;
   }
   &__img-container {

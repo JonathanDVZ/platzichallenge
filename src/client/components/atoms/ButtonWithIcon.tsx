@@ -1,7 +1,6 @@
-import React from "react";
+import React from 'react';
 
-export interface IButtonWithIcon
-  extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+export interface IButtonWithIcon extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   className?: string;
   iconComponent: React.ReactNode;
 }

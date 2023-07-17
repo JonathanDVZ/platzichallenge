@@ -1,9 +1,9 @@
-import { createContext } from "react";
-import { IThemeState, IThemeContext } from "../../types/ThemeContext";
+import { createContext } from 'react';
+import { IThemeState, IThemeContext } from '../../types/ThemeContext';
 
 const CharacterContext = createContext<IThemeContext>({
   state: {} as IThemeState,
-  dispatch: () => {},
+  dispatch: () => {}
 });
 
 export default CharacterContext;

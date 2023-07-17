@@ -1,21 +1,21 @@
-import type { Config } from "jest";
+import type { Config } from 'jest';
 
 const config: Config = {
-  preset: "ts-jest",
+  preset: 'ts-jest',
   verbose: true,
-  setupFilesAfterEnv: ["@testing-library/jest-dom/extend-expect"],
+  setupFilesAfterEnv: ['@testing-library/jest-dom/extend-expect'],
   moduleNameMapper: {
-    "\\.(css|less|scss|sss|styl)$": "<rootDir>/node_modules/identity-obj-proxy",
+    '\\.(css|less|scss|sss|styl)$': '<rootDir>/node_modules/identity-obj-proxy'
   },
   transform: {
-    "^.+\\.tsx?$": [
-      "ts-jest",
+    '^.+\\.tsx?$': [
+      'ts-jest',
       // required due to custom location of tsconfig.json configuration file
       // https://kulshekhar.github.io/ts-jest/docs/getting-started/options/tsconfig
-      { tsconfig: "tsconfig.client.json" },
-    ],
+      { tsconfig: 'tsconfig.client.json' }
+    ]
   },
-  testEnvironment: "jsdom",
+  testEnvironment: 'jsdom'
 };
 
 export default config;

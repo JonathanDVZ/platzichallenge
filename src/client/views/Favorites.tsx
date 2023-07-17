@@ -1,11 +1,11 @@
-import React, { useState, useEffect, useContext } from "react";
-import CharacterContext from "../context/characters/CharactersContext";
-import CharactersSection from "../components/organisms/CharactersSection";
-import { ICharacter } from "../types/CharactersContext";
+import React, { useState, useEffect, useContext } from 'react';
+import CharacterContext from '../context/characters/CharactersContext';
+import CharactersSection from '../components/organisms/CharactersSection';
+import { ICharacter } from '../types/CharactersContext';
 
 const Favorites: React.FC = () => {
   const {
-    state: { characters },
+    state: { characters }
   } = useContext(CharacterContext);
   const [favorites, setFavorites] = useState<ICharacter[]>([]);
 

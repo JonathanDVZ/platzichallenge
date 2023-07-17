@@ -1,9 +1,4 @@
-import {
-  ICharacterState,
-  IAction,
-  ICharacter,
-  ActionType,
-} from "../../types/CharactersContext";
+import { ICharacterState, IAction, ICharacter, ActionType } from '../../types/CharactersContext';
 
 export default (state: ICharacterState, action: IAction): ICharacterState => {
   switch (action.type) {
@@ -15,11 +10,11 @@ export default (state: ICharacterState, action: IAction): ICharacterState => {
         favorite:
           character.id === (action.payload as ICharacter).id
             ? !character.favorite
-            : character.favorite,
+            : character.favorite
       }));
       return {
         ...state,
-        characters: updatedCharacters,
+        characters: updatedCharacters
       };
     default:
       return state;

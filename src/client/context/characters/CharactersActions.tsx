@@ -1,6 +1,6 @@
-import { Dispatch } from "react";
-import axios from "axios";
-import { IAction, ICharacter, ActionType } from "../../types/CharactersContext";
+import { Dispatch } from 'react';
+import axios from 'axios';
+import { IAction, ICharacter, ActionType } from '../../types/CharactersContext';
 
 type CharacterDoc = {
   _id: string;
@@ -17,7 +17,7 @@ interface IDataResult {
 }
 
 const setCharacters = async (dispatch: Dispatch<IAction>) => {
-  const { data }: { data: IDataResult } = await axios.get("/api/characters");
+  const { data }: { data: IDataResult } = await axios.get('/api/characters');
 
   const characters: ICharacter[] = data.docs.map(
     ({ _id, Nombre, Historia, Imagen, Genero, Estado, Ocupacion }) => ({
@@ -28,7 +28,7 @@ const setCharacters = async (dispatch: Dispatch<IAction>) => {
       gender: Genero,
       status: Estado,
       occupation: Ocupacion,
-      favorite: false,
+      favorite: false
     })
   );
   dispatch({ type: ActionType.ADD_CHACARTERS, payload: characters });

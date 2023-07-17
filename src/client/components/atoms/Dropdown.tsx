@@ -1,12 +1,11 @@
-import React from "react";
+import React from 'react';
 
 export type Option = {
   value: string;
   text: string;
 };
 
-export interface IDropdown
-  extends React.SelectHTMLAttributes<HTMLSelectElement> {
+export interface IDropdown extends React.SelectHTMLAttributes<HTMLSelectElement> {
   labelTitle?: string;
   options?: Option[];
 }
@@ -18,9 +17,7 @@ const Dropdown: React.FC<IDropdown> = (props) => {
 
   return (
     <div className="ptz-dropdown">
-      {props.labelTitle && (
-        <label htmlFor={dropdownProps.id}>{props.labelTitle}</label>
-      )}
+      {props.labelTitle && <label htmlFor={dropdownProps.id}>{props.labelTitle}</label>}
       <select {...dropdownProps} className="ptz-dropdown__select">
         {props.options &&
           props.options.map(({ value, text }, index) => (

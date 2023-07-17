@@ -1,6 +1,6 @@
-import * as React from "react";
-import { StaticRouter } from "react-router-dom/server";
-import App from "./App";
+import * as React from 'react';
+import { StaticRouter } from 'react-router-dom/server';
+import App from './App';
 
 const EntryServer: React.FC<string> = (url) => (
   <React.StrictMode>

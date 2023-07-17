@@ -2,7 +2,7 @@
   display: flex;
   align-items: center;
   margin-top: 70px;
-  @include breakpoint-max("md") {
+  @include breakpoint-max('md') {
     flex-direction: column;
   }
 }

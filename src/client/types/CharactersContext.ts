@@ -1,4 +1,4 @@
-import { Dispatch } from "react";
+import { Dispatch } from 'react';
 
 export interface ICharacter {
   id: string;
@@ -21,8 +21,8 @@ export interface ICharacterContext {
 }
 
 export enum ActionType {
-  ADD_CHACARTERS = "ADD_CHACARTERS",
-  TOGGLE_FAVORITE = "TOGGLE_FAVORITE",
+  ADD_CHACARTERS = 'ADD_CHACARTERS',
+  TOGGLE_FAVORITE = 'TOGGLE_FAVORITE'
 }
 
 export type IAction = {
@@ -31,20 +31,20 @@ export type IAction = {
 };
 
 export enum SortType {
-  DEFAULT = "DEFAULT",
-  NAME = "NAME",
-  GENDER = "GENDER",
-  STATUS = "STATUS",
-  OCCUPATION = "OCCUPATION",
+  DEFAULT = 'DEFAULT',
+  NAME = 'NAME',
+  GENDER = 'GENDER',
+  STATUS = 'STATUS',
+  OCCUPATION = 'OCCUPATION'
 }
 
 export enum FilterType {
-  DEFAULT = "DEFAULT",
-  MAN = "MAN",
-  WOMAN = "WOMAN",
-  PET = "PET",
-  DIED = "DIED",
-  ALIVE = "ALIVE",
-  FICTIONAL = "FICTIONAL",
-  ROBOT = "ROBOT",
+  DEFAULT = 'DEFAULT',
+  MAN = 'MAN',
+  WOMAN = 'WOMAN',
+  PET = 'PET',
+  DIED = 'DIED',
+  ALIVE = 'ALIVE',
+  FICTIONAL = 'FICTIONAL',
+  ROBOT = 'ROBOT'
 }

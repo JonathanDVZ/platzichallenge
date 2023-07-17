@@ -1,6 +1,4 @@
-import React from "react";
-
-//const Image: React.FC<React.ImgHTMLAttributes<HTMLImageElement>> = (props) => (
+import React from 'react';
 
 export interface IImage extends React.ImgHTMLAttributes<HTMLImageElement> {
   className?: string;
