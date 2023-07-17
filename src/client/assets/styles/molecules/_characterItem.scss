@@ -34,11 +34,11 @@
     align-items: center;
     background: rgba($color-blue, 0.3);
     position: relative;
-    .ptz-img {
-      width: 80%;
-      height: 80%;
-      object-fit: contain;
-    }
+  }
+  &__img {
+    width: 80%;
+    height: 80%;
+    object-fit: contain;
   }
   &__info-container {
     min-height: 170px;

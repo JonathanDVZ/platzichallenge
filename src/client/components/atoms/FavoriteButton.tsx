@@ -1,5 +1,9 @@
 import React from "react";
-import { IFavoriteButton } from "../../types/FavoriteButton";
+
+export interface IFavoriteButton
+  extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+  favorite?: boolean;
+}
 
 const FavoriteButton: React.FC<IFavoriteButton> = ({ onClick, favorite }) => (
   <button
@@ -7,8 +11,8 @@ const FavoriteButton: React.FC<IFavoriteButton> = ({ onClick, favorite }) => (
     aria-label="favorite"
     onClick={onClick}>
     <span
-      className={`ptz-favorite-button__icon ${
-        favorite && "ptz-favorite-button__icon--red"
+      className={`ptz-favorite-button__icon${
+        favorite ? " ptz-favorite-button__icon--red" : ""
       }`}></span>
   </button>
 );

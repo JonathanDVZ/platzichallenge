@@ -5,7 +5,6 @@ import axios from "axios";
 import React from "react";
 import ReactDOMServer from "react-dom/server";
 import { matchPath } from "react-router-dom";
-import { StaticRouter } from "react-router-dom/server";
 import EntryServer from "../client/EntryServer";
 import routes from "../client/routes/routes";
 import type { Route } from "../client/routes/routes";

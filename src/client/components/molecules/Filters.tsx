@@ -1,12 +1,7 @@
 import React, { useState, useEffect } from "react";
-import Dropdown from "../atom/Dropdown";
+import Dropdown, { Option } from "../atoms/Dropdown";
 
-type Option = {
-  value: string;
-  text: string;
-};
-
-interface Props {
+export interface IFilters {
   sortOptions: Option[];
   sortValue: string;
   onSortChange: (value: string) => void;
@@ -15,7 +10,7 @@ interface Props {
   onFilterChange: (value: string) => void;
 }
 
-const Filters: React.FC<Props> = ({
+const Filters: React.FC<IFilters> = ({
   filterOptions,
   filterValue,
   onFilterChange,

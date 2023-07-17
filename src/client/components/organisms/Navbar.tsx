@@ -2,7 +2,7 @@ import React, { useState, useContext, useEffect } from "react";
 import ThemeContext from "../../context/theme/ThemeContext";
 import { toggleTheme } from "../../context/theme/ThemeActions";
 import { Theme } from "./../../types/ThemeContext";
-import ButtonWithIcon from "../atom/ButtonWithIcon";
+import ButtonWithIcon from "../atoms/ButtonWithIcon";
 import SwitchIcon from "../molecules/SwitchIcon";
 import { Link } from "react-router-dom";
 

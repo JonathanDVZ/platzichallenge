@@ -1,16 +1,17 @@
 import React from "react";
 
-type Option = {
+export type Option = {
   value: string;
   text: string;
 };
 
-interface Props extends React.SelectHTMLAttributes<HTMLSelectElement> {
+export interface IDropdown
+  extends React.SelectHTMLAttributes<HTMLSelectElement> {
   labelTitle?: string;
   options?: Option[];
 }
 
-const Dropdown: React.FC<Props> = (props) => {
+const Dropdown: React.FC<IDropdown> = (props) => {
   const dropdownProps = { ...props };
   delete dropdownProps.labelTitle;
   delete dropdownProps.options;

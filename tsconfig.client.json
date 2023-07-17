@@ -4,6 +4,7 @@
     "module": "es6", // generate ES modules
     "target": "es5", // target ES5 API
     "jsx": "react", // compile JSX to React.createElement statements for browser
+    "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "forceConsistentCasingInFileNames": true,
     "skipLibCheck": true,

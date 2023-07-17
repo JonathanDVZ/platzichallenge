@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import Input from "../atom/Input";
-import ButtonWithIcon from "../atom/ButtonWithIcon";
+import Input from "../atoms/Input";
+import ButtonWithIcon from "../atoms/ButtonWithIcon";
 import { Search } from "iconoir-react";
 
 type Props = {
@@ -18,7 +18,7 @@ const SearchBox: React.FC<Props> = ({ onSearch }) => {
 
   return (
     <div className="ptz-search-box">
-      <form onSubmit={handleSubmit}>
+      <form data-testid="form" onSubmit={handleSubmit}>
         <Input
           type="text"
           placeholder="Search character"

@@ -1,11 +1,12 @@
 import React from "react";
 
-interface Props extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+export interface IButtonWithIcon
+  extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   className?: string;
   iconComponent: React.ReactNode;
 }
 
-const ButtonWithIcon: React.FC<Props> = (props) => {
+const ButtonWithIcon: React.FC<IButtonWithIcon> = (props) => {
   const propsWithoutIcon = { ...props };
   delete propsWithoutIcon.iconComponent;
   delete propsWithoutIcon.className;
