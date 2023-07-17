@@ -57,13 +57,18 @@ const Navbar: React.FC = () => {
         />
         <div
           className={`ptz-navbar__links-container ${
-            clicked && "ptz-navbar__links-container--open"
+            clicked ? "ptz-navbar__links-container--open" : ""
           }`}>
-          <Link to="/" className="ptz-navbar__link" onClick={linkHandler}>
+          <Link
+            to="/"
+            id="home-link"
+            className="ptz-navbar__link"
+            onClick={linkHandler}>
             Home
           </Link>
           <Link
             to="/favorites"
+            id="favorite-link"
             className="ptz-navbar__link"
             onClick={linkHandler}>
             Favorites
