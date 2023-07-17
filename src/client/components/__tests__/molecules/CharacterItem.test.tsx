@@ -2,7 +2,7 @@ import React from 'react';
 import '@testing-library/jest-dom/extend-expect';
 import { render } from '@testing-library/react';
 import { ICharacter } from '../../../types/CharactersContext';
-import CharacterItem, { Props } from '../../molecules/CharacterItem';
+import CharacterItem from '../../molecules/CharacterItem';
 
 describe('components/molecules/CharacterItem', () => {
   const character: ICharacter = {
@@ -48,7 +48,7 @@ describe('components/molecules/CharacterItem', () => {
     const { container } = render(<CharacterItem character={character} />);
     const p = container.querySelectorAll('p');
 
-    expect(p.length).toBe(4);
+    expect(p).toHaveLength(4);
   });
 
   test('check content of <p /> tags', () => {

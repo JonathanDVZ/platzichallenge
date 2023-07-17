@@ -8,7 +8,7 @@ const Image: React.FC<IImage> = (props) => {
   const inputProps = { ...props };
   delete inputProps.className;
 
-  return <img {...props} className={props.className} />;
+  return <img {...props} alt={props.alt} className={props.className} />;
 };
 
 export default Image;

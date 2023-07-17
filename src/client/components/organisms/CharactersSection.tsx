@@ -1,49 +1,39 @@
-import React, { useState, useEffect, Dispatch, useMemo } from "react";
-import SearchBox from "../molecules/SearchBox";
-import CharacterItem from "../molecules/CharacterItem";
-import Filters from "../molecules/Filters";
-import {
-  ICharacter,
-  SortType,
-  FilterType,
-} from "../../types/CharactersContext";
+import React, { useState, useEffect, Dispatch, useMemo } from 'react';
+import SearchBox from '../molecules/SearchBox';
+import CharacterItem from '../molecules/CharacterItem';
+import Filters from '../molecules/Filters';
+import { ICharacter, SortType, FilterType } from '../../types/CharactersContext';
 
 type Props = {
   characters: ICharacter[];
 };
 
 const sortOptions = [
-  { value: SortType.DEFAULT, text: "Default" },
-  { value: SortType.NAME, text: "Name" },
-  { value: SortType.GENDER, text: "Gender" },
-  { value: SortType.STATUS, text: "Status" },
-  { value: SortType.OCCUPATION, text: "Occupation" },
+  { value: SortType.DEFAULT, text: 'Default' },
+  { value: SortType.NAME, text: 'Name' },
+  { value: SortType.GENDER, text: 'Gender' },
+  { value: SortType.STATUS, text: 'Status' },
+  { value: SortType.OCCUPATION, text: 'Occupation' }
 ];
 
 const filterOptions = [
-  { value: FilterType.DEFAULT, text: "Default" },
-  { value: FilterType.MAN, text: "Man" },
-  { value: FilterType.WOMAN, text: "Woman" },
-  { value: FilterType.PET, text: "Pet" },
-  { value: FilterType.DIED, text: "Died" },
-  { value: FilterType.ALIVE, text: "Alive" },
-  { value: FilterType.FICTIONAL, text: "Ficticio" },
-  { value: FilterType.ROBOT, text: "Robot" },
+  { value: FilterType.DEFAULT, text: 'Default' },
+  { value: FilterType.MAN, text: 'Man' },
+  { value: FilterType.WOMAN, text: 'Woman' },
+  { value: FilterType.PET, text: 'Pet' },
+  { value: FilterType.DIED, text: 'Died' },
+  { value: FilterType.ALIVE, text: 'Alive' },
+  { value: FilterType.FICTIONAL, text: 'Ficticio' },
+  { value: FilterType.ROBOT, text: 'Robot' }
 ];
 
 const CharactersSection: React.FC<Props> = ({ characters }) => {
-  const [search, setSearch] = useState("");
+  const [search, setSearch] = useState('');
   // This state is to keep the result of the search
-  const [searchedCharacters, setSearchedCharacters] = useState<ICharacter[]>(
-    []
-  );
+  const [searchedCharacters, setSearchedCharacters] = useState<ICharacter[]>([]);
   // This state is to keep the filtered results
-  const [filteredCharacters, setFilteredCharacters] = useState<ICharacter[]>(
-    []
-  );
-  const [selectedFilter, setSelectedFilter] = useState<FilterType>(
-    FilterType.DEFAULT
-  );
+  const [filteredCharacters, setFilteredCharacters] = useState<ICharacter[]>([]);
+  const [selectedFilter, setSelectedFilter] = useState<FilterType>(FilterType.DEFAULT);
   const [filterByUser, setFilterByUser] = useState<boolean>(false);
   const [selectedSort, setSelectedSort] = useState<SortType>(SortType.DEFAULT);
 
@@ -68,19 +58,19 @@ const CharactersSection: React.FC<Props> = ({ characters }) => {
       if (selectedFilter === FilterType.DEFAULT)
         handleSearch(searchedCharacters, setFilteredCharacters, search);
       else if (selectedFilter === FilterType.MAN)
-        handleSearch(searchedCharacters, setFilteredCharacters, "masculino");
+        handleSearch(searchedCharacters, setFilteredCharacters, 'masculino');
       if (selectedFilter === FilterType.WOMAN)
-        handleSearch(searchedCharacters, setFilteredCharacters, "femenino");
+        handleSearch(searchedCharacters, setFilteredCharacters, 'femenino');
       if (selectedFilter === FilterType.PET)
-        handleSearch(searchedCharacters, setFilteredCharacters, "mascota");
+        handleSearch(searchedCharacters, setFilteredCharacters, 'mascota');
       if (selectedFilter === FilterType.DIED)
-        handleSearch(searchedCharacters, setFilteredCharacters, "fallecido");
+        handleSearch(searchedCharacters, setFilteredCharacters, 'fallecido');
       if (selectedFilter === FilterType.ALIVE)
-        handleSearch(searchedCharacters, setFilteredCharacters, "vivo");
+        handleSearch(searchedCharacters, setFilteredCharacters, 'vivo');
       if (selectedFilter === FilterType.FICTIONAL)
-        handleSearch(searchedCharacters, setFilteredCharacters, "ficticio");
+        handleSearch(searchedCharacters, setFilteredCharacters, 'ficticio');
       if (selectedFilter === FilterType.ROBOT)
-        handleSearch(searchedCharacters, setFilteredCharacters, "robot");
+        handleSearch(searchedCharacters, setFilteredCharacters, 'robot');
     }
   }, [selectedFilter]);
 

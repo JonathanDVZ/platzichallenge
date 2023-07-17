@@ -1,7 +1,6 @@
 import React from 'react';
 import '@testing-library/jest-dom/extend-expect';
-import { render, within, fireEvent } from '@testing-library/react';
-import { ICharacter } from '../../../types/CharactersContext';
+import { render, fireEvent } from '@testing-library/react';
 import Filters, { IFilters } from '../../molecules/Filters';
 import { Option } from '../../atoms/Dropdown';
 
@@ -34,14 +33,8 @@ describe('components/molecules/CharacterItem', () => {
 
   test('Filters renders a <Dropdown />', () => {
     const { container } = render(<Filters {...props} />);
-    const dropdown = container.querySelector('div.ptz-dropdown');
-    expect(dropdown).toBeVisible;
-  });
-
-  test('Filters renders a <Dropdown />', () => {
-    const { container } = render(<Filters {...props} />);
     const dropdown = container.querySelectorAll('div.ptz-dropdown');
-    expect(dropdown.length).toBe(2);
+    expect(dropdown).toHaveLength(2);
   });
 
   test('check when the user change the option in first dropdown', () => {

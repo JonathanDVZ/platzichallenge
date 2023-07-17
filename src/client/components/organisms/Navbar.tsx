@@ -1,23 +1,23 @@
-import React, { useState, useContext, useEffect } from "react";
-import ThemeContext from "../../context/theme/ThemeContext";
-import { toggleTheme } from "../../context/theme/ThemeActions";
-import { Theme } from "./../../types/ThemeContext";
-import ButtonWithIcon from "../atoms/ButtonWithIcon";
-import SwitchIcon from "../molecules/SwitchIcon";
-import { Link } from "react-router-dom";
+import React, { useState, useContext, useEffect } from 'react';
+import ThemeContext from '../../context/theme/ThemeContext';
+import { toggleTheme } from '../../context/theme/ThemeActions';
+import { Theme } from './../../types/ThemeContext';
+import ButtonWithIcon from '../atoms/ButtonWithIcon';
+import SwitchIcon from '../molecules/SwitchIcon';
+import { Link } from 'react-router-dom';
 
 const Navbar: React.FC = () => {
   const {
     state: { theme },
-    dispatch,
+    dispatch
   } = useContext(ThemeContext);
   const [clicked, setClicked] = useState(false);
 
   useEffect(() => {
     if (theme === Theme.DARK) {
-      document.body.classList.add("ptz-dark-mode");
+      document.body.classList.add('ptz-dark-mode');
     } else {
-      document.body.classList.remove("ptz-dark-mode");
+      document.body.classList.remove('ptz-dark-mode');
     }
   }, [theme]);
 
@@ -44,7 +44,7 @@ const Navbar: React.FC = () => {
           onClick={() => toggleTheme(dispatch)}
         />
         <ButtonWithIcon
-          className={`ptz-navbar__btn ${clicked && "ptz-navbar__btn--clicked"}`}
+          className={`ptz-navbar__btn ${clicked && 'ptz-navbar__btn--clicked'}`}
           aria-label="btn-menu"
           onClick={clickHandler}
           iconComponent={
@@ -57,20 +57,18 @@ const Navbar: React.FC = () => {
         />
         <div
           className={`ptz-navbar__links-container ${
-            clicked ? "ptz-navbar__links-container--open" : ""
-          }`}>
-          <Link
-            to="/"
-            id="home-link"
-            className="ptz-navbar__link"
-            onClick={linkHandler}>
+            clicked ? 'ptz-navbar__links-container--open' : ''
+          }`}
+        >
+          <Link to="/" id="home-link" className="ptz-navbar__link" onClick={linkHandler}>
             Home
           </Link>
           <Link
             to="/favorites"
             id="favorite-link"
             className="ptz-navbar__link"
-            onClick={linkHandler}>
+            onClick={linkHandler}
+          >
             Favorites
           </Link>
         </div>

@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react";
-import Dropdown, { Option } from "../atoms/Dropdown";
+import React, { useState, useEffect } from 'react';
+import Dropdown, { Option } from '../atoms/Dropdown';
 
 export interface IFilters {
   sortOptions: Option[];
@@ -16,7 +16,7 @@ const Filters: React.FC<IFilters> = ({
   onFilterChange,
   sortOptions,
   sortValue,
-  onSortChange,
+  onSortChange
 }) => {
   const [selectedFilter, setSelectedFilter] = useState(filterValue);
   const [selectedSort, setSelectedSort] = useState(sortValue);

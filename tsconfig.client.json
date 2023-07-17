@@ -13,5 +13,6 @@
     "strictNullChecks": true,
     "noImplicitAny": true,
     "moduleResolution": "node"
-  }
+  },
+  "exclude": ["node_modules", "cypress.config.ts", "cypress"]
 }

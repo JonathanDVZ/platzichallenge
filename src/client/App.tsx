@@ -1,5 +1,5 @@
 import React from 'react';
-import { Routes, Route, Link } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import CharactersProvider from './context/characters/CharactersProvider';
 import ThemeProvider from './context/theme/ThemeProvider';
 import routes from './routes/routes';

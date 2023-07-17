@@ -1,19 +1,19 @@
-import React, { useState } from "react";
-import Input from "../atoms/Input";
-import ButtonWithIcon from "../atoms/ButtonWithIcon";
-import { Search } from "iconoir-react";
+import React, { useState } from 'react';
+import Input from '../atoms/Input';
+import ButtonWithIcon from '../atoms/ButtonWithIcon';
+import { Search } from 'iconoir-react';
 
 type Props = {
   onSearch: (search: string) => void;
 };
 
 const SearchBox: React.FC<Props> = ({ onSearch }) => {
-  const [search, setSearch] = useState("");
+  const [search, setSearch] = useState('');
 
   const handleSubmit = (event: React.FormEvent) => {
     event.preventDefault();
     onSearch(search.toLocaleLowerCase());
-    setSearch("");
+    setSearch('');
   };
 
   return (

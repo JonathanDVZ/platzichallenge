@@ -1,6 +1,6 @@
 import React from 'react';
 import '@testing-library/jest-dom/extend-expect';
-import { render, fireEvent } from '@testing-library/react';
+import { render } from '@testing-library/react';
 import SwitchIcon from '../../molecules/SwitchIcon';
 import { Theme } from './../../../types/ThemeContext';
 
@@ -14,7 +14,7 @@ describe('components/molecules/SwitchIcon', () => {
     const { container } = render(<SwitchIcon themeSelected={Theme.LIGHT} />);
     const divs = container.querySelectorAll('div.ptz-switch-icon__option');
 
-    expect(divs.length).toBe(2);
+    expect(divs).toHaveLength(2);
   });
 
   test(`when themeSelected is ${Theme.LIGHT}`, () => {

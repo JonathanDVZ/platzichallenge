@@ -1,4 +1,4 @@
-import React, { useReducer, useEffect } from 'react';
+import React, { useReducer } from 'react';
 import ThemeContext from './ThemeContext';
 import CharacterReducer from './ThemeReducer';
 import { IThemeState, Theme } from '../../types/ThemeContext';

@@ -1,9 +1,9 @@
-import React, { useContext } from "react";
-import CharacterContext from "../../context/characters/CharactersContext";
-import { toggleFavorite } from "../../context/characters/CharactersActions";
-import Image from "../atoms/Image";
-import FavoriteButton from "../atoms/FavoriteButton";
-import { ICharacter } from "../../types/CharactersContext";
+import React, { useContext } from 'react';
+import CharacterContext from '../../context/characters/CharactersContext';
+import { toggleFavorite } from '../../context/characters/CharactersActions';
+import Image from '../atoms/Image';
+import FavoriteButton from '../atoms/FavoriteButton';
+import { ICharacter } from '../../types/CharactersContext';
 
 export type Props = {
   character: ICharacter;
@@ -15,11 +15,7 @@ const CharacterItem: React.FC<Props> = ({ character }) => {
   return (
     <div className="ptz-character-item">
       <div className="ptz-character-item__img-container">
-        <Image
-          src={character.image}
-          alt={character.name}
-          className="ptz-character-item__img"
-        />
+        <Image src={character.image} alt={character.name} className="ptz-character-item__img" />
         <FavoriteButton
           onClick={() => toggleFavorite(dispatch, character)}
           favorite={character.favorite}
