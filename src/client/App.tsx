@@ -5,7 +5,6 @@ import ThemeProvider from './context/theme/ThemeProvider';
 import routes from './routes/routes';
 import type { Route as RouteType } from '../client/routes/routes';
 import Navbar from './components/organisms/Navbar';
-import './assets/styles/main.scss';
 
 const App: React.FC = () => (
   <CharactersProvider>

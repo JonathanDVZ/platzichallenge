@@ -25,6 +25,10 @@ server.get('/api/characters', async (req, res, next) => {
   }
 });
 
+server.get('/main.css', (req, res) => {
+  res.sendFile(__dirname + '/public/assets/styles/main.css');
+});
+
 const manifest = fs.readFileSync(path.join(__dirname, 'static/manifest.json'), 'utf-8');
 const assets = JSON.parse(manifest);
 
