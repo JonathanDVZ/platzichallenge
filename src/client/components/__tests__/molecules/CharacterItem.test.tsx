@@ -17,18 +17,18 @@ describe('components/molecules/CharacterItem', () => {
   };
 
   test('render CharacterItem', () => {
-    const component = render(<CharacterItem character={character} />);
+    const component = render(<CharacterItem character={character} dispatch={() => {}} />);
     expect(component).toBeVisible;
   });
 
   test('CharacterItem renders a <Image />', () => {
-    const { container } = render(<CharacterItem character={character} />);
+    const { container } = render(<CharacterItem character={character} dispatch={() => {}} />);
     const image = container.querySelector('image');
     expect(image).toBeVisible;
   });
 
   test('check <Image /> props', () => {
-    const { container } = render(<CharacterItem character={character} />);
+    const { container } = render(<CharacterItem character={character} dispatch={() => {}} />);
     const image = container.querySelector('image');
 
     expect(
@@ -39,20 +39,20 @@ describe('components/molecules/CharacterItem', () => {
   });
 
   test('CharacterItem renders a <FavoriteButton />', () => {
-    const { container } = render(<CharacterItem character={character} />);
+    const { container } = render(<CharacterItem character={character} dispatch={() => {}} />);
     const button = container.querySelector('button');
     expect(button).toBeVisible;
   });
 
   test('CharacterItem renders a <p />', () => {
-    const { container } = render(<CharacterItem character={character} />);
+    const { container } = render(<CharacterItem character={character} dispatch={() => {}} />);
     const p = container.querySelectorAll('p');
 
     expect(p).toHaveLength(4);
   });
 
   test('check content of <p /> tags', () => {
-    const { container } = render(<CharacterItem character={character} />);
+    const { container } = render(<CharacterItem character={character} dispatch={() => {}} />);
     const p = container.querySelectorAll('p');
 
     expect(p[0].innerHTML).toBe(character.name);

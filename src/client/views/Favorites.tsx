@@ -5,7 +5,8 @@ import { ICharacter } from '../types/CharactersContext';
 
 const Favorites: React.FC = () => {
   const {
-    state: { characters }
+    state: { characters },
+    dispatch
   } = useContext(CharacterContext);
   const [favorites, setFavorites] = useState<ICharacter[]>([]);
 
@@ -18,7 +19,7 @@ const Favorites: React.FC = () => {
 
   return (
     <div>
-      <CharactersSection characters={favorites} />
+      <CharactersSection characters={favorites} dispatch={dispatch} />
     </div>
   );
 };

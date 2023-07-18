@@ -4,12 +4,13 @@ import CharactersSection from '../components/organisms/CharactersSection';
 
 const Home: React.FC = () => {
   const {
-    state: { characters }
+    state: { characters },
+    dispatch
   } = useContext(CharacterContext);
 
   return (
     <div>
-      <CharactersSection characters={characters} />
+      <CharactersSection characters={characters} dispatch={dispatch} />
     </div>
   );
 };

@@ -1,11 +1,13 @@
-import React, { useState, useEffect, Dispatch, useMemo } from 'react';
+import React, { useState, useEffect, Dispatch, useMemo, memo } from 'react';
 import SearchBox from '../molecules/SearchBox';
 import CharacterItem from '../molecules/CharacterItem';
 import Filters from '../molecules/Filters';
-import { ICharacter, SortType, FilterType } from '../../types/CharactersContext';
+import { ICharacter, SortType, FilterType, IAction } from '../../types/CharactersContext';
+import { isEqual } from 'lodash';
 
 type Props = {
   characters: ICharacter[];
+  dispatch: Dispatch<IAction>;
 };
 
 const sortOptions = [
@@ -27,7 +29,7 @@ const filterOptions = [
   { value: FilterType.ROBOT, text: 'Robot' }
 ];
 
-const CharactersSection: React.FC<Props> = ({ characters }) => {
+const CharactersSection: React.FC<Props> = ({ characters, dispatch }) => {
   const [search, setSearch] = useState('');
   // This state is to keep the result of the search
   const [searchedCharacters, setSearchedCharacters] = useState<ICharacter[]>([]);
@@ -52,17 +54,11 @@ const CharactersSection: React.FC<Props> = ({ characters }) => {
 
   useEffect(() => {
     /* 
-      After searchedCharacters is updated, it's necessary to update filteredCharacters with the same value.
+      After searchedCharacters is updated, it's necessary to update filteredCharacters.
       So we can manipulate this array without affecting the search result
     */
-    setFilteredCharacters(searchedCharacters);
-  }, [searchedCharacters]);
-
-  useEffect(() => {
-    // When the user changes the filter option then filteredCharacters will be updated
     if (searchedCharacters) {
-      if (selectedFilter === FilterType.DEFAULT)
-        handleSearch(searchedCharacters, setFilteredCharacters, search);
+      if (selectedFilter === FilterType.DEFAULT) setFilteredCharacters(searchedCharacters);
       else if (selectedFilter === FilterType.MAN)
         handleSearch(searchedCharacters, setFilteredCharacters, 'masculino');
       if (selectedFilter === FilterType.WOMAN)
@@ -166,11 +162,16 @@ const CharactersSection: React.FC<Props> = ({ characters }) => {
       />
       <div className="ptz-characters-section__result">
         {sortedCharacters.map((character) => (
-          <CharacterItem key={character.id} character={character} />
+          <CharacterItem key={character.id} character={character} dispatch={dispatch} />
         ))}
       </div>
     </section>
   );
 };
 
-export default CharactersSection;
+const compareProps = (
+  { characters: prevCharacters }: Props,
+  { characters: nextCharacters }: Props
+) => isEqual(prevCharacters, nextCharacters);
+
+export default memo(CharactersSection, compareProps);
